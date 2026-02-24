@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, Volume2, VolumeX, Pause, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -624,6 +625,7 @@ const StoryViewer = React.forwardRef(
     ref
   ) => {
     const [isOpen, setIsOpen] = React.useState(false);
+    const [isMounted, setIsMounted] = React.useState(false);
     const [viewedIndices, setViewedIndices] = React.useState(() => new Set());
     const thumbnailRef = React.useRef(null);
 
@@ -640,6 +642,10 @@ const StoryViewer = React.forwardRef(
 
     const handleClose = React.useCallback(() => {
       setIsOpen(false);
+    }, []);
+
+    React.useEffect(() => {
+      setIsMounted(true);
     }, []);
 
     const handleStoryChange = React.useCallback(
@@ -675,20 +681,24 @@ const StoryViewer = React.forwardRef(
           </div>
         </div>
 
-        <AnimatePresence>
-          {isOpen && (
-            <StoryViewerModal
-              stories={stories}
-              username={username}
-              avatar={avatar}
-              timestamp={timestamp}
-              initialIndex={firstUnviewedIndex}
-              viewedIndices={viewedIndices}
-              onClose={handleClose}
-              onStoryChange={handleStoryChange}
-            />
+        {isMounted &&
+          createPortal(
+            <AnimatePresence>
+              {isOpen && (
+                <StoryViewerModal
+                  stories={stories}
+                  username={username}
+                  avatar={avatar}
+                  timestamp={timestamp}
+                  initialIndex={firstUnviewedIndex}
+                  viewedIndices={viewedIndices}
+                  onClose={handleClose}
+                  onStoryChange={handleStoryChange}
+                />
+              )}
+            </AnimatePresence>,
+            document.body
           )}
-        </AnimatePresence>
       </>
     );
   }

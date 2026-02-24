@@ -40,7 +40,7 @@ export const AnimatedMarqueeHero = ({
   return (
     <section
       className={cn(
-        "relative w-full h-screen overflow-hidden bg-background flex flex-col items-center justify-center text-center px-4",
+        "relative w-full h-screen overflow-hidden bg-[var(--fog-bg)] flex flex-col items-center justify-center text-center px-4",
         className,
       )}
     >
@@ -137,20 +137,3 @@ export const AnimatedMarqueeHero = ({
     </section>
   );
 };
-
-export default function Hero() {
-  return (
-    <AnimatedMarqueeHero
-      tagline="Design Systems & Storytelling"
-      title="Build Scroll Animations That Feel Alive"
-      description="A smooth, modern hero with animated text and a continuous image marquee."
-      ctaText="Start Exploring"
-      images={[
-        "/images/hero-1.svg",
-        "/images/hero-2.svg",
-        "/images/hero-3.svg",
-        "/images/hero-4.svg",
-      ]}
-    />
-  );
-}

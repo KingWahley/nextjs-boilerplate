@@ -7,8 +7,8 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
+} from "@/components/ui/primitives/accordion";
+import { Button } from "@/components/ui/primitives/button";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -17,16 +17,16 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
+} from "@/components/ui/primitives/navigation-menu";
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet";
+} from "@/components/ui/primitives/sheet";
 
-export const Navbar5 = () => {
+export function SiteHeader() {
   const features = [
     {
       title: "Dashboard",
@@ -209,4 +209,4 @@ export const Navbar5 = () => {
       </div>
     </section>
   );
-};
+}

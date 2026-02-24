@@ -1,6 +1,6 @@
 import "./globals.css";
-import Footer from "@/components/Footer";
-import { Navbar5 } from "@/components/ui/navbar-5";
+import SiteFooter from "@/components/layout/site-footer";
+import { SiteHeader } from "@/components/layout/site-header";
 
 export const metadata = {
   title: "",
@@ -12,9 +12,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <div className="flex min-h-screen w-full flex-col overflow-x-hidden bg-[var(--fog-bg)] text-black/90">
-          <Navbar5 />
+          <SiteHeader />
           <main className="flex-1">{children}</main>
-          <Footer />
+          <SiteFooter />
         </div>
       </body>
     </html>

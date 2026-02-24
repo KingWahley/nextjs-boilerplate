@@ -1,12 +1,6 @@
 "use client";
 
-import * as React from "react";
-import { motion } from "framer-motion";
-import { Plus, User } from "lucide-react";
-import { StoryViewer } from "@/components/ui/story-viewer";
-import { cn } from "@/lib/utils";
-
-
+import { StoryViewer } from "@/components/ui/composite/story-viewer";
 
 const users = [
   {
@@ -76,13 +70,61 @@ const users = [
       { id: "alex-2", type: "video", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" },
     ],
   },
+  {
+    username: "Nina Patel",
+    avatar: "https://api.dicebear.com/6.x/adventurer-neutral/svg?seed=Nina+Patel",
+    timestamp: new Date(Date.now() - 14 * 60 * 60 * 1000).toISOString(),
+    stories: [
+      { id: "nina-1", type: "image", src: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=1200&fit=crop" },
+      { id: "nina-2", type: "video", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4" },
+      { id: "nina-3", type: "image", src: "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?w=800&h=1200&fit=crop" },
+    ],
+  },
+  {
+    username: "Daniel Kim",
+    avatar: "https://api.dicebear.com/6.x/adventurer-neutral/svg?seed=Daniel+Kim",
+    timestamp: new Date(Date.now() - 16 * 60 * 60 * 1000).toISOString(),
+    stories: [
+      { id: "daniel-1", type: "video", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4" },
+      { id: "daniel-2", type: "image", src: "https://images.unsplash.com/photo-1495020689067-958852a7765e?w=800&h=1200&fit=crop" },
+    ],
+  },
+  {
+    username: "Priya Nair",
+    avatar: "https://api.dicebear.com/6.x/adventurer-neutral/svg?seed=Priya+Nair",
+    timestamp: new Date(Date.now() - 18 * 60 * 60 * 1000).toISOString(),
+    stories: [
+      { id: "priya-1", type: "image", src: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=800&h=1200&fit=crop" },
+      { id: "priya-2", type: "video", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" },
+      { id: "priya-3", type: "image", src: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&h=1200&fit=crop" },
+    ],
+  },
+  {
+    username: "Marcus Hill",
+    avatar: "https://api.dicebear.com/6.x/adventurer-neutral/svg?seed=Marcus+Hill",
+    timestamp: new Date(Date.now() - 20 * 60 * 60 * 1000).toISOString(),
+    stories: [
+      { id: "marcus-1", type: "video", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" },
+      { id: "marcus-2", type: "image", src: "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=800&h=1200&fit=crop" },
+    ],
+  },
+  {
+    username: "Olivia Reed",
+    avatar: "https://api.dicebear.com/6.x/adventurer-neutral/svg?seed=Olivia+Reed",
+    timestamp: new Date(Date.now() - 22 * 60 * 60 * 1000).toISOString(),
+    stories: [
+      { id: "olivia-1", type: "image", src: "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=800&h=1200&fit=crop" },
+      { id: "olivia-2", type: "image", src: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&h=1200&fit=crop" },
+      { id: "olivia-3", type: "video", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" },
+    ],
+  },
 ];
 
 export default function StoryView() {
   return (
-    <div className="w-full max-w-3xl mx-auto px-4">
+    <div className="w-full min-w-0">
       {/* <h3 className="text-sm font-semibold mb-3 px-1">Recent stories</h3> */}
-      <div className="flex gap-4 overflow-x-auto py-2 px-1 [&::-webkit-scrollbar]:hidden md:[&::-webkit-scrollbar]:block md:[&::-webkit-scrollbar]:h-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-muted-foreground/20 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-muted-foreground/30">
+      <div className="w-full max-w-full flex gap-4 overflow-x-auto py-2 px-1 overscroll-x-contain [&::-webkit-scrollbar]:hidden md:[&::-webkit-scrollbar]:block md:[&::-webkit-scrollbar]:h-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-muted-foreground/20 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-muted-foreground/30">
        
         {users.map((user) => (
           <StoryViewer
