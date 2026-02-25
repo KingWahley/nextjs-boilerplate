@@ -41,7 +41,10 @@ export default function AboutSection3() {
   };
 
   return (
-    <section className="w-full bg-white py-10 md:py-14 px-6 md:px-8 overflow-x-hidden overflow-y-visible" ref={heroRef}>
+    <section
+      className="w-full bg-white py-10 md:py-14 px-6 md:px-8 overflow-x-hidden overflow-y-visible"
+      ref={heroRef}
+    >
       <div className="mx-auto max-w-6xl">
         <div className="relative">
           <div className="absolute z-10 flex w-[85%] items-center justify-between lg:top-4 md:top-0 sm:-top-2 -top-3 mb-8">
@@ -57,56 +60,6 @@ export default function AboutSection3() {
                 About Us
               </TimelineContent>
             </div>
-            <div className="flex gap-4">
-              <TimelineContent
-                as="a"
-                animationNum={0}
-                timelineRef={heroRef}
-                customVariants={revealVariants}
-                href="https://www.facebook.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="md:w-8 md:h-8 sm:w-6 sm:h-6 w-5 h-5 cursor-pointer rounded-lg border border-slate-200 bg-white flex items-center justify-center"
-              >
-                <img src="https://pro-section.ui-layouts.com/facebook.svg" alt="fb" width={24} height={24} />
-              </TimelineContent>
-              <TimelineContent
-                as="a"
-                animationNum={1}
-                timelineRef={heroRef}
-                customVariants={revealVariants}
-                href="https://www.instagram.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="md:w-8 md:h-8 sm:w-6 sm:h-6 w-5 h-5 cursor-pointer rounded-lg border border-slate-200 bg-white flex items-center justify-center"
-              >
-                <img src="https://pro-section.ui-layouts.com/instagram.svg" alt="insta" width={24} height={24} />
-              </TimelineContent>
-              <TimelineContent
-                as="a"
-                animationNum={2}
-                timelineRef={heroRef}
-                customVariants={revealVariants}
-                href="https://www.linkedin.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="md:w-8 md:h-8 sm:w-6 sm:h-6 w-5 h-5 cursor-pointer rounded-lg border border-slate-200 bg-white flex items-center justify-center"
-              >
-                <img src="https://pro-section.ui-layouts.com/linkedin.svg" alt="linkedin" width={24} height={24} />
-              </TimelineContent>
-              <TimelineContent
-                as="a"
-                animationNum={3}
-                timelineRef={heroRef}
-                customVariants={revealVariants}
-                href="https://www.youtube.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="md:w-8 md:h-8 sm:w-6 sm:h-6 w-5 h-5 cursor-pointer rounded-lg border border-slate-200 bg-white flex items-center justify-center"
-              >
-                <img src="https://pro-section.ui-layouts.com/youtube.svg" alt="youtube" width={24} height={24} />
-              </TimelineContent>
-            </div>
           </div>
 
           <TimelineContent
@@ -116,7 +69,12 @@ export default function AboutSection3() {
             customVariants={scaleVariants}
             className="relative group m-0"
           >
-            <svg className="w-full" width="100%" height="100%" viewBox="0 0 100 40">
+            <svg
+              className="w-full"
+              width="100%"
+              height="100%"
+              viewBox="0 0 100 40"
+            >
               <defs>
                 <clipPath id="clip-inverted" clipPathUnits="objectBoundingBox">
                   <path
@@ -130,7 +88,7 @@ export default function AboutSection3() {
                 preserveAspectRatio="xMidYMid slice"
                 width="100%"
                 height="100%"
-                href="https://images.unsplash.com/photo-1718601980986-0ce75101d52d?w=1200&auto=format&fit=crop"
+                href="https://vida.id/hubfs/agency%20adalah.jpg"
               />
             </svg>
           </TimelineContent>
@@ -162,8 +120,12 @@ export default function AboutSection3() {
                 customVariants={revealVariants}
                 className="mb-2 flex items-center gap-2 lg:text-4xl sm:text-3xl text-2xl"
               >
-                <span className="font-semibold text-slate-900">4.9/5</span>
-                <span className="uppercase text-slate-600">client rating</span>
+                <span className="font-semibold text-sm md:text-4xl text-slate-900">
+                  4.9/5
+                </span>
+                <span className="uppercase text-sm md:text-4xl text-slate-600">
+                  client rating
+                </span>
               </TimelineContent>
               <TimelineContent
                 as="div"
@@ -173,7 +135,9 @@ export default function AboutSection3() {
                 className="mb-2 flex items-center gap-2 sm:text-base text-xs"
               >
                 <span className="font-bold text-slate-900">+42%</span>
-                <span className="text-slate-600">avg. creative performance lift</span>
+                <span className="text-slate-600">
+                  avg. creative performance lift
+                </span>
                 <span className="lg:hidden block text-slate-300">|</span>
               </TimelineContent>
             </div>
@@ -195,7 +159,8 @@ export default function AboutSection3() {
                   delay: 3,
                 }}
               >
-                We Build Scroll-Stopping Creative That Turns Attention Into Revenue.
+                We Build Scroll-Stopping Creative That Turns Attention Into
+                Revenue.
               </VerticalCutReveal>
             </h1>
 
@@ -214,9 +179,10 @@ export default function AboutSection3() {
                 className="sm:text-base text-xs"
               >
                 <p className="leading-relaxed text-justify">
-                  We are a content creation and advertising agency focused on performance-first
-                  storytelling. From concept development to final production, we craft assets that
-                  are built for paid and organic channels.
+                  We are a content creation and advertising agency focused on
+                  performance-first storytelling. From concept development to
+                  final production, we craft assets that are built for paid and
+                  organic channels.
                 </p>
               </TimelineContent>
               <TimelineContent
@@ -227,57 +193,12 @@ export default function AboutSection3() {
                 className="sm:text-base text-xs"
               >
                 <p className="leading-relaxed text-justify">
-                  Our team combines creative direction, media buying insight, and rapid iteration
-                  cycles to help brands launch faster, test smarter, and scale campaigns with
-                  consistency.
+                  Our team combines creative direction, media buying insight,
+                  and rapid iteration cycles to help brands launch faster, test
+                  smarter, and scale campaigns with consistency.
                 </p>
               </TimelineContent>
             </TimelineContent>
-          </div>
-
-          <div className="md:col-span-1">
-            <div className="text-right">
-              <TimelineContent
-                as="div"
-                animationNum={12}
-                timelineRef={heroRef}
-                customVariants={revealVariants}
-                className="mb-2 text-2xl font-bold text-slate-900"
-              >
-                ADTLAX
-              </TimelineContent>
-              <TimelineContent
-                as="div"
-                animationNum={13}
-                timelineRef={heroRef}
-                customVariants={revealVariants}
-                className="mb-8 text-sm text-slate-600"
-              >
-                Content Creation & Advertising Agency
-              </TimelineContent>
-
-              <TimelineContent
-                as="div"
-                animationNum={14}
-                timelineRef={heroRef}
-                customVariants={revealVariants}
-                className="mb-6"
-              >
-                <p className="mb-4 font-medium text-slate-900">
-                  Ready to launch your next high-performing campaign?
-                </p>
-              </TimelineContent>
-
-              <TimelineContent
-                as="button"
-                animationNum={15}
-                timelineRef={heroRef}
-                customVariants={revealVariants}
-                className="ml-auto flex w-fit cursor-pointer gap-2 rounded-lg border border-neutral-700 bg-neutral-900 px-5 py-3 font-semibold text-white shadow-lg shadow-neutral-900 transition-all duration-300 ease-in-out hover:gap-4 hover:bg-neutral-950"
-              >
-                LET&apos;S COLLABORATE <ArrowRight />
-              </TimelineContent>
-            </div>
           </div>
         </div>
       </div>

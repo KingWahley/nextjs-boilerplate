@@ -93,7 +93,7 @@ export function SiteHeader() {
       <div className="container">
         <nav className="flex items-center justify-between">
           <a
-            href=""
+            href="/"
             className="flex items-center gap-2"
           >
             <img
@@ -132,10 +132,10 @@ export function SiteHeader() {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink
-                  href="#"
+                  href="/about"
                   className={navigationMenuTriggerStyle()}
                 >
-                  Products
+                  About Us
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
@@ -148,7 +148,7 @@ export function SiteHeader() {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink
-                  href="#"
+                  href="/contact"
                   className={navigationMenuTriggerStyle()}
                 >
                   Contact
