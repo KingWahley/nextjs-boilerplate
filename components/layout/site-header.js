@@ -29,12 +29,22 @@ import {
 
 export function SiteHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isStoryViewerOpen, setIsStoryViewerOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 0);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const onStoryViewerToggle = (event) => {
+      setIsStoryViewerOpen(Boolean(event?.detail?.open));
+    };
+
+    window.addEventListener("story-viewer:toggle", onStoryViewerToggle);
+    return () => window.removeEventListener("story-viewer:toggle", onStoryViewerToggle);
   }, []);
 
   const features = [
@@ -72,7 +82,9 @@ export function SiteHeader() {
 
   return (
     <section
-      className={`sticky top-0 z-[100] p-4 transition-all duration-200 ${
+      className={`fixed inset-x-0 top-0 z-[100] p-4 transition-all duration-200 ${
+        isStoryViewerOpen ? "opacity-0 invisible pointer-events-none" : "opacity-100 visible"
+      } ${
         isScrolled
           ? "border-b border-slate-200 bg-white/75 shadow-sm backdrop-blur"
           : "bg-white"
@@ -156,7 +168,7 @@ export function SiteHeader() {
             </SheetTrigger>
             <SheetContent
               side="top"
-              className="max-h-screen overflow-auto bg-[var(--fog-bg)]"
+              className="max-h-screen overflow-y-auto overflow-x-hidden bg-[var(--fog-bg)]"
             >
               <SheetHeader>
                 <SheetTitle>

@@ -435,8 +435,14 @@ function StoryViewerModal({
 
   React.useEffect(() => {
     document.body.style.overflow = "hidden";
+    window.dispatchEvent(
+      new CustomEvent("story-viewer:toggle", { detail: { open: true } })
+    );
     return () => {
       document.body.style.overflow = "";
+      window.dispatchEvent(
+        new CustomEvent("story-viewer:toggle", { detail: { open: false } })
+      );
     };
   }, []);
 
