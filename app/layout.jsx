@@ -11,9 +11,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <div className="flex min-h-screen w-full flex-col overflow-x-hidden bg-[var(--fog-bg)] text-black/90">
+        <div className="flex min-h-screen w-full flex-col bg-[var(--fog-bg)] text-black/90">
           <SiteHeader />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 overflow-x-hidden">{children}</main>
           <SiteFooter />
         </div>
       </body>

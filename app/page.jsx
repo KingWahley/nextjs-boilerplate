@@ -4,6 +4,7 @@ import ServicesOrbitSection from "@/components/sections/services-orbit-section";
 import TestimonialsSection from "@/components/sections/testimonials-section";
 import PortfolioSection from "@/components/sections/portfolio-section";
 import UseMarquee from "@/components/sections/UseMarquee";
+import PricingSection from "@/components/sections/pricing-section";
 
 export default function HomePage() {
   return (
@@ -11,8 +12,9 @@ export default function HomePage() {
       <HeroSection />
       <PortfolioSection />
       <TestimonialsSection />
-      <UseMarquee />
       <FeaturedShowcaseSection />
+      <PricingSection />
+      {/* <UseMarquee /> */}
       <ServicesOrbitSection />
     </section>
   );

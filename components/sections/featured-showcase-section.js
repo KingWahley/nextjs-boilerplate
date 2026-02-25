@@ -131,7 +131,21 @@ export default function FeaturedShowcaseSection() {
   };
 
   return (
-    <section className="bg-[var(--fog-bg)] py-6">
+    <section className="bg-gray-100 py-6 px-6 md:px-8">
+      <div className="mb-12 max-w-2xl">
+        <p className="text-xs font-semibold uppercase tracking-widest text-red-600 ">
+          Our Tools
+        </p>
+
+        <h2 className="mt-3 text-3xl md:text-4xl font-semibold text-slate-900 leading-tight">
+          The Stack Behind Our Creative Workflow
+        </h2>
+
+        <p className="mt-3 text-slate-600 text-base md:text-lg">
+          We use industry-leading platforms to design, produce, and optimize
+          content that helps brands grow faster.
+        </p>
+      </div>
       <div className="grid w-full grid-cols-1 md:grid-cols-2 ">
         <div className="relative overflow-hidden rounded-none border bg-white p-4">
           <div className="mb-4 flex items-center gap-2 text-sm text-slate-500">
@@ -140,7 +154,9 @@ export default function FeaturedShowcaseSection() {
           </div>
           <h3 className="text-xl font-normal text-slate-900">
             Visualize campaign demand across regions.{" "}
-            <span className="text-slate-500">Plan localized creative and optimize media by location.</span>
+            <span className="text-slate-500">
+              Plan localized creative and optimize media by location.
+            </span>
           </h3>
 
           <div className="relative mt-4">
@@ -154,11 +170,14 @@ export default function FeaturedShowcaseSection() {
         <div className="flex flex-col justify-between gap-4 rounded-none border border-slate-300/70 bg-white p-6">
           <div>
             <span className="flex items-center gap-2 text-sm text-slate-500">
-              <GalleryVerticalEnd className="h-4 w-4" /> {featuredCasestudy.tags}
+              <GalleryVerticalEnd className="h-4 w-4" />{" "}
+              {featuredCasestudy.tags}
             </span>
             <h3 className="text-xl font-normal text-slate-900">
               {featuredCasestudy.title}{" "}
-              <span className="text-slate-500">{featuredCasestudy.subtitle}</span>
+              <span className="text-slate-500">
+                {featuredCasestudy.subtitle}
+              </span>
             </h3>
           </div>
           <div className="flex w-full items-center justify-center">

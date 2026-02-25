@@ -1,6 +1,7 @@
 "use client";
 
 import { MenuIcon } from "lucide-react";
+import { useEffect, useState } from "react";
 
 import {
   Accordion,
@@ -27,6 +28,15 @@ import {
 } from "@/components/ui/primitives/sheet";
 
 export function SiteHeader() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 0);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const features = [
     {
       title: "Dashboard",
@@ -61,20 +71,26 @@ export function SiteHeader() {
   ];
 
   return (
-    <section className="relative z-30 bg-[var(--fog-bg)] p-4 lg:bg-transparent">
+    <section
+      className={`sticky top-0 z-[100] p-4 transition-all duration-200 ${
+        isScrolled
+          ? "border-b border-slate-200 bg-white/75 shadow-sm backdrop-blur"
+          : "bg-white"
+      }`}
+    >
       <div className="container">
         <nav className="flex items-center justify-between">
           <a
-            href="https://www.shadcnblocks.com"
+            href=""
             className="flex items-center gap-2"
           >
             <img
-              src="https://shadcnblocks.com/images/block/logos/shadcnblockscom-icon.svg"
-              className="max-h-8"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3mycvmtjinugeTsXQ9wRYS5p4W802Gxxg6Q&s"
+              className="max-h-8 rounded-full"
               alt="Shadcn UI Navbar"
             />
             <span className="text-lg font-semibold tracking-tighter">
-              Shadcnblocks.com
+              Adtlax.com
             </span>
           </a>
           <NavigationMenu className="hidden lg:block">
@@ -144,18 +160,15 @@ export function SiteHeader() {
             >
               <SheetHeader>
                 <SheetTitle>
-                  <a
-                    href="https://www.shadcnblocks.com"
-                    className="flex items-center gap-2"
-                  >
-                    <img
+                  <a href="" className="flex items-center gap-2">
+                    {/* <img
                       src="https://shadcnblocks.com/images/block/logos/shadcnblockscom-icon.svg"
                       className="max-h-8"
-                      alt="Shadcnblocks"
-                    />
-                    <span className="text-lg font-semibold tracking-tighter">
+                      alt="Adtlax"
+                    /> */}
+                    {/* <span className="text-lg font-semibold tracking-tighter">
                       Shadcnblocks.com
-                    </span>
+                    </span> */}
                   </a>
                 </SheetTitle>
               </SheetHeader>

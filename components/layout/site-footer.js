@@ -5,8 +5,14 @@ export default function SiteFooter() {
   return (
     <div className="w-full">
       <TapedFooter
-        logo={<Hexagon className="h-10 w-10" />}
-        brandName="Awesome Corp"
+        logo={
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3mycvmtjinugeTsXQ9wRYS5p4W802Gxxg6Q&s"
+            className="max-h-8 rounded-full"
+            alt="Shadcn UI Navbar"
+          />
+        }
+        brandName="Adtlax.com"
         socialLinks={[
           {
             icon: <Twitter className="h-5 w-5" />,
@@ -30,7 +36,7 @@ export default function SiteFooter() {
           { href: "/terms", label: "Terms" },
         ]}
         copyright={{
-          text: "(c) 2024 Awesome Corp",
+          text: "(c) 2026 WevDevii",
           license: "All rights reserved",
         }}
       />
