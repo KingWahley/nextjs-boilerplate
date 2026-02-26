@@ -83,7 +83,9 @@ export function SiteHeader() {
   return (
     <section
       className={`fixed inset-x-0 top-0 z-[100] p-4 transition-all duration-200 ${
-        isStoryViewerOpen ? "opacity-0 invisible pointer-events-none" : "opacity-100 visible"
+        isStoryViewerOpen
+          ? "opacity-0 invisible pointer-events-none"
+          : "opacity-100 visible"
       } ${
         isScrolled
           ? "border-b border-slate-200 bg-white/75 shadow-sm backdrop-blur"
@@ -92,10 +94,7 @@ export function SiteHeader() {
     >
       <div className="container">
         <nav className="flex items-center justify-between">
-          <a
-            href="/"
-            className="flex items-center gap-2"
-          >
+          <a href="/" className="flex items-center gap-2">
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3mycvmtjinugeTsXQ9wRYS5p4W802Gxxg6Q&s"
               className="max-h-8 rounded-full"
@@ -157,7 +156,9 @@ export function SiteHeader() {
             </NavigationMenuList>
           </NavigationMenu>
           <div className="hidden items-center gap-4 lg:flex">
-            <Button variant="outline">Sign in</Button>
+            <a href="/login">
+              <Button variant="outline">Sign in</Button>
+            </a>
             <Button>Start for free</Button>
           </div>
           <Sheet>
@@ -224,7 +225,10 @@ export function SiteHeader() {
                   </a>
                 </div>
                 <div className="mt-6 flex flex-col gap-4">
-                  <Button variant="outline">Sign in</Button>
+                  <a href="/login">
+                    <Button variant="outline">Sign in</Button>
+                  </a>
+
                   <Button>Start for free</Button>
                 </div>
               </div>
